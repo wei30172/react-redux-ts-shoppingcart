@@ -1,0 +1,70 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 3rem 1fr 1.5rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: $primaryColor;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  a {
+    color: #ffffff;
+  }
+}
+
+main {
+  background-color: #eee;
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background-color: $primaryColor;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: $primaryColor;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-price {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h3, button {
+    text-align: center;
+    flex: 1;
+  }
+  button {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    &:hover {
+      color: $highlightColor;
+    }
+  }
+}

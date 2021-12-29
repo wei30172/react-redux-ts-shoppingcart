@@ -1,0 +1,23 @@
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 30rem;
+  height: 100%;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  word-wrap:break-word;
+  a {
+    display: flex;
+    flex-direction: column;
+    color: $baseColor;
+    img {
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+    }
+    h3 {
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+}

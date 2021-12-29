@@ -1,0 +1,14 @@
+.checkout-form {
+  width: 100%;
+  form {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: .2rem;
+      padding: .8rem;
+      border: 0.1rem #c0c0c0 solid;
+    }
+  }
+}
