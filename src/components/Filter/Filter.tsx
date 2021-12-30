@@ -4,7 +4,6 @@ import { PropsFromRedux, filterConnector } from '../../state/connector/filterCon
 import { ProductType } from "../../types/ProductType.type";
 
 interface Props extends PropsFromRedux {
-  count?: number
   sort: string
   size: string
   products: ProductType[]
@@ -57,7 +56,7 @@ const Filter = (
             setOrder('defualt')
           }}
         >
-          <option value="All">All</option>
+          <option value="">All</option>
           <option value="XS">XS</option>
           <option value="S">S</option>
           <option value="M">M</option>

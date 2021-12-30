@@ -7,15 +7,15 @@ import { ProductType } from '../../types/ProductType.type'
 import ProductItem from "../ProductItem/ProductItem"
 
 interface Props extends PropsFromRedux {
-  products:  ProductType[]
+  products: ProductType[]
   fetchProducts: () => Promise<void>
-  handleAddToCart: (clickedProduct: ProductType) => void
+  addToCart: (product: ProductType) => void
 }
 
 const Products = (
   { products,
     fetchProducts,
-    handleAddToCart
+    addToCart
   }: Props) => {
  
   useEffect(() => {
@@ -28,7 +28,10 @@ const Products = (
     <div className="products">
       {products.map((product: ProductType) => (
         <div key={product._id}>
-          <ProductItem product={product} handleAddToCart={handleAddToCart}/>
+          <ProductItem 
+            product={product}
+            addToCart={addToCart}
+          />
         </div>
       ))}
     </div>

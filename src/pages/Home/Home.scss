@@ -10,6 +10,13 @@
   }
 }
 
+@media (max-width: 420px) {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+  }  
+}
+
 .cart-button {
   background-color: $baseColor;
   position: fixed;

@@ -6,10 +6,10 @@ import ProductModal from '../ProductModal/ProductModal';
 
 type Props = {
   product: ProductType
-  handleAddToCart: (clickedProduct: ProductType) => void
+  addToCart: (product: ProductType) => void
 }
 
-const ProductItem: React.FC<Props> = ({ product, handleAddToCart }) => {
+const ProductItem: React.FC<Props> = ({ product, addToCart }) => {
   const [showProductModal, setShowProductModal] = useState(false)
 
   const openModal = () => {
@@ -32,14 +32,14 @@ const ProductItem: React.FC<Props> = ({ product, handleAddToCart }) => {
         <h3>{formatCurrency(product.price)}</h3>
         <button
           className='button'
-          onClick={() => handleAddToCart(product)}>
+          onClick={() => addToCart(product)}>
           Add to Cart
         </button>
       </div>
       {showProductModal &&
         <ProductModal
           product={product}
-          handleAddToCart={handleAddToCart}
+          addToCart={addToCart}
           closeModal={closeModal}
         />
       }

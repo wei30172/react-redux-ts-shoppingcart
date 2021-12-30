@@ -5,11 +5,11 @@ import formatCurrency from "../../util"
 
 type Props = {
   product: ProductType
-  handleAddToCart: (clickedProduct: ProductType) => void
+  addToCart: (product: ProductType) => void
   closeModal: () => void
 }
 
-const ProductModal: React.FC<Props> = ({product, handleAddToCart, closeModal}) => {
+const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
   return (
     <Modal
       isOpen={true}
@@ -40,7 +40,7 @@ const ProductModal: React.FC<Props> = ({product, handleAddToCart, closeModal}) =
               <button
                 className="button"
                 onClick={() => {
-                  handleAddToCart(product)
+                  addToCart(product)
                   closeModal()
                 }}
               >

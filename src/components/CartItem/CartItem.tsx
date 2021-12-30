@@ -4,8 +4,8 @@ import formatCurrency from "../../util"
 
 type Props = {
   item: ProductType,
-  addToCart: (clickedProduct: ProductType) => void;
-  removeFromCart: (id: string, all: boolean) => void;
+  addToCart: (product: ProductType) => void;
+  removeFromCart: (product: ProductType, all: boolean) => void;
 }
 
 const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
@@ -21,12 +21,12 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
         </div>
         <div className='buttons'>
           <button className='button remove'
-            onClick={() => removeFromCart(item._id, true)}
+            onClick={() => removeFromCart(item, true)}
           >
             remove
           </button>
           <button className="button"
-            onClick={() => removeFromCart(item._id, false)}
+            onClick={() => removeFromCart(item, false)}
           >
             -
           </button>
