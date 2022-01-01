@@ -5,10 +5,18 @@ import { OrderType } from "../../types/OrderType.type";
 
 type Props = {
   cartItems: ProductType[]
+  total: number
   createOrder: (order: OrderType) => void
+  openModal: () => void
 }
 
-const CheckOutForm: React.FC<Props> = ({ cartItems, createOrder }) => {
+const CheckOutForm: React.FC<Props> = (
+  {
+    cartItems,
+    total,
+    createOrder,
+    openModal
+  }) => {
   const [input, setInput] = useState({
     email: "",
     name: "",
@@ -25,6 +33,7 @@ const CheckOutForm: React.FC<Props> = ({ cartItems, createOrder }) => {
     e.preventDefault()
     createOrder({
       ...input,
+      total: total,
       cartItems: [...cartItems]
     })
     setInput({
@@ -32,6 +41,7 @@ const CheckOutForm: React.FC<Props> = ({ cartItems, createOrder }) => {
       name: "",
       address: ""
     })
+    openModal()
   }
   return (
     <div className='checkout-form'>

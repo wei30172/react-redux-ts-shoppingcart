@@ -29,7 +29,7 @@ const ProductItem: React.FC<Props> = ({ product, addToCart }) => {
         <h3>{product.title}</h3>
       </a>
       <div className="product-price">
-        <h3>{formatCurrency(product.price)}</h3>
+        <h3>$ {formatCurrency(product.price)}</h3>
         <button
           className='button'
           onClick={() => addToCart(product)}>

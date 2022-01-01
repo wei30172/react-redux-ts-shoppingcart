@@ -3,26 +3,33 @@ import { OrderAction } from "../actions"
 import { OrderType } from "../../../types/OrderType.type"
 import { ActionType } from "../actionTypes"
 
-export const createOrder = (order: OrderType[]) =>
+export const createOrder = (order: OrderType) =>
   (dispatch: Dispatch<OrderAction>) => {
-    fetch("/api/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(order),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch({
-          type: ActionType.CREATE_ORDER,
-          payload: data
-        });
-        localStorage.removeItem("cartItems");
-        dispatch({
-          type: ActionType.CLEAR_CART
-        });
-      });
+    // fetch("/api/orders", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(order),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     dispatch({
+    //       type: ActionType.CREATE_ORDER,
+    //       payload: {
+    //        order: data
+    //       // }
+    //     });
+    //     localStorage.removeItem("cartItems");
+    //   });
+    let data = order
+    dispatch({
+      type: ActionType.CREATE_ORDER,
+      payload: {
+        order: data
+      }
+    });
+    localStorage.removeItem("cartItems");
 };
 
 export const clearOrder = () =>
@@ -39,7 +46,9 @@ export const fetchOrders = () =>
       .then((data) => {
         dispatch({
           type: ActionType.FETCH_ORDERS,
-          payload: data
+          payload: {
+            orders: data
+          }
         });
-      });
+      });  
 };

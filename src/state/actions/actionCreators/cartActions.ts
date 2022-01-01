@@ -46,3 +46,10 @@ export const removeFromCart = (product: ProductType, all: boolean) =>
     });
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
+
+export const clearCart = () =>
+  (dispatch: Dispatch<CartAction>) => {
+    dispatch({
+      type: ActionType.CLEAR_CART
+    });
+};

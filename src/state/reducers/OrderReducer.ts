@@ -7,11 +7,18 @@ const initialState = [] as OrderType[]
 export const OrderReducer = (state = initialState, action: OrderAction) => {
   switch (action.type) {
     case ActionType.CREATE_ORDER:
-      return { order: action.payload };
+      return {
+        order: action.payload.order,
+      };
     case ActionType.CLEAR_ORDER:
-      return { order: null };
+      return {
+        order: null,
+      };
     case ActionType.FETCH_ORDERS:
-      return { orders: action.payload };
+      return {
+        orders: action.payload.orders
+      };
+
     default:
       return state;
   }

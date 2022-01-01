@@ -4,5 +4,6 @@ export type OrderType = {
   email: string
   name: string
   address: string
+  total: number
   cartItems: ProductType[]
 }

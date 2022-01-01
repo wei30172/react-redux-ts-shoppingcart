@@ -1,8 +1,6 @@
 import './Home.scss';
 import { useState } from "react";
 import { useScroll } from "../../hooks";
-import { ProductType } from "../../types/ProductType.type";
-import { OrderType } from "../../types/OrderType.type";
 
 // components
 import Products from '../../components/Products/Products';
@@ -13,7 +11,7 @@ import Filter from '../../components/Filter/Filter';
 
 const Home = () => {
   const [cartOpen, setCartOpen] = useState(false)
-  const [orders, setOrders] = useState([] as OrderType[])
+  const [cartIcon, setCartIcon] = useState(true)
   const { inputRef,  handleScrollTop } = useScroll(200)
 
   const handleClickCartIcon = () => {
@@ -21,28 +19,29 @@ const Home = () => {
     handleScrollTop()
   }
 
-  const createOrder = (order: OrderType) => {
-    setOrders([...orders, {...order}])
-    // setCartItems([])
+  const handleShowCartIcon = () => {
+    setCartIcon(!cartIcon)
   }
 
   return (
     <div ref={inputRef} className="home">
-      <ScrollBtn handleScrollTop={handleScrollTop}/>        
+      <ScrollBtn handleScrollTop={handleScrollTop}/>    
       <div className="main">
         <Filter />
         <Products/>
       </div>
-      {/* Cart Icon */}
-      <button
+      { cartIcon && <button
         className="button cart-button"
         onClick={handleClickCartIcon}
       >
         🛒
-      </button>
+      </button>}
       { cartOpen &&
         <div className="sidebar">
-          <Cart createOrder={createOrder}/>
+          <Cart
+            handleClickCartIcon={handleClickCartIcon}
+            handleShowCartIcon={handleShowCartIcon}
+          />
         </div>}
     </div>
   )

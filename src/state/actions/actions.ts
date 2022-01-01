@@ -39,11 +39,17 @@ interface removeFromCartAction {
   }
 }
 
-export type CartAction = addToCartAction | removeFromCartAction
+interface clearCartAction {
+  type: ActionType.CLEAR_CART
+}
+
+export type CartAction = addToCartAction | removeFromCartAction | clearCartAction
 
 interface createOrderAction {
   type: ActionType.CREATE_ORDER
-  payload: OrderType[]
+  payload: {
+    order: OrderType
+  }
 }
 
 interface clearOrderAction {
@@ -52,11 +58,9 @@ interface clearOrderAction {
 
 interface fetchOrdersAction {
   type: ActionType.FETCH_ORDERS
-  payload: OrderType[]
+  payload: {
+    orders: OrderType[]
+  }
 }
 
-interface clearCartAction {
-  type: ActionType.CLEAR_CART
-}
-
-export type OrderAction = createOrderAction | clearOrderAction | fetchOrdersAction| clearCartAction
+export type OrderAction = createOrderAction | clearOrderAction | fetchOrdersAction

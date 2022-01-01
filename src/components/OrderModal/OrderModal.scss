@@ -1,0 +1,37 @@
+.order-modal {
+  .close-button {
+    background-color: $baseColor;
+    z-index: 1000;
+    position: absolute;
+    right: 1rem;
+    top: 2.5rem;
+  }
+
+  .order-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    ul {
+      margin: 1rem;
+      padding: 1rem;
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div {
+          padding: 10px;
+        }
+      }
+    }
+    .items {
+      background-color: #f7f7f7;
+      text-align: left;
+      padding: 0;
+    }
+    .success-message {
+      color: green;
+    }
+  }
+}

@@ -36,7 +36,7 @@ const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
               ))}
             </p>
             <div className="product-price">
-              <h3>{formatCurrency(product.price)}</h3>
+              <h3>$ {formatCurrency(product.price)}</h3>
               <button
                 className="button"
                 onClick={() => {
