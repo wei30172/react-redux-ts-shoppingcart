@@ -1,5 +1,5 @@
 import './Cart.scss'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PropsFromRedux, cartConnector } from '../../state/connector/cartConnector';
 import { ProductType } from "../../types/ProductType.type";
 import { OrderType } from "../../types/OrderType.type";

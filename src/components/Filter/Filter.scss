@@ -7,4 +7,34 @@
   div {
     flex: 1;
   }
+  select {
+    display: inline-block;
+    padding: 5px 3px;
+    width: 50%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+  }
+}
+
+@media (max-width: 1024px) {
+  .filter {
+    select {
+      width: 60%;
+      font-size: .8rem;
+    }
+  }
+  
+}
+
+@media (max-width: 420px) {
+  .filter {
+    select {
+      display: block;
+      width: 80%;
+      font-size: .8rem;
+    }
+  }
 }
