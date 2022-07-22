@@ -22,7 +22,7 @@ const ProductItem: React.FC<Props> = ({ product, addToCart }) => {
   return (
     <div className="product-item">
       <a href={"#" + product._id} onClick={openModal}>
-        <img src={product.image} alt={product.title} />
+        <img src={`/images/products/${product.image}`} alt={product.title} />
         <h3>{product.title}</h3>
       </a>
       <div className="product-price">

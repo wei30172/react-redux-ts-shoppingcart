@@ -1,6 +1,6 @@
 {
   "name": "react-redux-ts-shoppingcart",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://shoppingcart-node-server.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

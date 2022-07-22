@@ -10,7 +10,6 @@ export const fetchProducts = () => {
       "https://my-json-server.typicode.com/wei30172/products-list-json/products";
     const res = await fetch(url);
     data = await res.json();
-    // console.log(data);
     dispatch({
       type: ActionType.FECTCH_PRODUCTS,
       payload: data,

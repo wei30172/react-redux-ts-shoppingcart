@@ -17,7 +17,7 @@ const ProductModal: React.FC<Props> = ({ product, addToCart, closeModal }) => {
           X
         </button>
         <div className="product-details">
-          <img src={product.image} alt={product.title}></img>
+          <img src={`/images/products/${product.image}`} alt={product.title}></img>
           <div className="product-details-description">
             <h2>{product.title}</h2>
             <p>{product.description}</p>
