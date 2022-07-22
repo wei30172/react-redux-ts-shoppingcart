@@ -1,50 +1,49 @@
-import './CheckOutForm.scss'
+import "./CheckOutForm.scss";
 import { useState } from "react";
 import { ProductType } from "../../types/ProductType.type";
 import { OrderType } from "../../types/OrderType.type";
 
 type Props = {
-  cartItems: ProductType[]
-  total: number
-  createOrder: (order: OrderType) => void
-  openModal: () => void
-}
+  cartItems: ProductType[];
+  total: number;
+  createOrder: (order: OrderType) => void;
+  openModal: () => void;
+};
 
-const CheckOutForm: React.FC<Props> = (
-  {
-    cartItems,
-    total,
-    createOrder,
-    openModal
-  }) => {
+const CheckOutForm: React.FC<Props> = ({
+  cartItems,
+  total,
+  createOrder,
+  openModal,
+}) => {
   const [input, setInput] = useState({
     email: "",
     name: "",
-    address: ""
-  })
+    address: "",
+  });
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInput({
       ...input,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
   const handleOrder = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
+    e.preventDefault();
     createOrder({
       ...input,
       total: total,
-      cartItems: [...cartItems]
-    })
+      cartItems: [...cartItems],
+    });
     setInput({
       email: "",
       name: "",
-      address: ""
-    })
-    openModal()
-  }
+      address: "",
+    });
+    openModal();
+  };
   return (
-    <div className='checkout-form'>
+    <div className="checkout-form">
       <form onSubmit={handleOrder}>
         <input
           type="email"
@@ -70,14 +69,10 @@ const CheckOutForm: React.FC<Props> = (
           required
           onChange={handleInput}
         />
-        <input
-          type="submit"
-          value="Create"
-          className="button create-button"
-        />
+        <input type="submit" value="Create" className="button create-button" />
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default CheckOutForm
+export default CheckOutForm;

@@ -1,4 +1,4 @@
-import './NotFound.scss';
+import "./NotFound.scss";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -9,6 +9,6 @@ const NotFound = () => {
       <Link to="/">Back to the homepage</Link>
     </div>
   );
-}
+};
 
-export default NotFound
+export default NotFound;

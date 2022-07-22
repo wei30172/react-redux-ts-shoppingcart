@@ -1,8 +1,8 @@
-import { OrderAction } from "../actions/actions"
-import { ActionType } from '../actions/actionTypes'
-import { OrderType }from '../../types/OrderType.type'
+import { OrderAction } from "../actions/actions";
+import { ActionType } from "../actions/actionTypes";
+import { OrderType } from "../../types/OrderType.type";
 
-const initialState = [] as OrderType[]
+const initialState = [] as OrderType[];
 
 export const OrderReducer = (state = initialState, action: OrderAction) => {
   switch (action.type) {
@@ -16,7 +16,7 @@ export const OrderReducer = (state = initialState, action: OrderAction) => {
       };
     case ActionType.FETCH_ORDERS:
       return {
-        orders: action.payload.orders
+        orders: action.payload.orders,
       };
 
     default:

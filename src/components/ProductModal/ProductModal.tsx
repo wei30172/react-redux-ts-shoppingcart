@@ -1,26 +1,19 @@
-import './ProductModal.scss'
-import Modal from 'react-modal'
-import { ProductType } from '../../types/ProductType.type'
-import formatCurrency from "../../util"
+import "./ProductModal.scss";
+import Modal from "react-modal";
+import { ProductType } from "../../types/ProductType.type";
+import formatCurrency from "../../util";
 
 type Props = {
-  product: ProductType
-  addToCart: (product: ProductType) => void
-  closeModal: () => void
-}
+  product: ProductType;
+  addToCart: (product: ProductType) => void;
+  closeModal: () => void;
+};
 
-const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
+const ProductModal: React.FC<Props> = ({ product, addToCart, closeModal }) => {
   return (
-    <Modal
-      isOpen={true}
-      onRequestClose={closeModal}
-      ariaHideApp={false}
-    >
+    <Modal isOpen={true} onRequestClose={closeModal} ariaHideApp={false}>
       <div className="product-modal">
-        <button
-          className="button close-button"
-          onClick={closeModal}
-        >
+        <button className="button close-button" onClick={closeModal}>
           X
         </button>
         <div className="product-details">
@@ -28,10 +21,12 @@ const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
           <div className="product-details-description">
             <h2>{product.title}</h2>
             <p>{product.description}</p>
-            <p>Avaiable Sizes:{" "}
+            <p>
+              Avaiable Sizes:{" "}
               {product.availableSizes.map((size, index) => (
                 <span key={index}>
-                  {" "}<button className="button">{size}</button>
+                  {" "}
+                  <button className="button">{size}</button>
                 </span>
               ))}
             </p>
@@ -40,8 +35,8 @@ const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
               <button
                 className="button"
                 onClick={() => {
-                  addToCart(product)
-                  closeModal()
+                  addToCart(product);
+                  closeModal();
                 }}
               >
                 Add To Cart
@@ -51,7 +46,7 @@ const ProductModal: React.FC<Props> = ({product, addToCart, closeModal}) => {
         </div>
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default ProductModal
+export default ProductModal;

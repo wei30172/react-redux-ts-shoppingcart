@@ -1,66 +1,75 @@
-import { ActionType } from './actionTypes'
-import { ProductType } from '../../types/ProductType.type'
-import { OrderType } from '../../types/OrderType.type'
+import { ActionType } from "./actionTypes";
+import { ProductType } from "../../types/ProductType.type";
+import { OrderType } from "../../types/OrderType.type";
 
 interface fetchProductsAction {
-  type: ActionType.FECTCH_PRODUCTS
-  payload: ProductType[]
+  type: ActionType.FECTCH_PRODUCTS;
+  payload: ProductType[];
 }
 
 interface filterProductsAction {
-  type: ActionType.FILTER_PRODUCTS_BY_SIZE
+  type: ActionType.FILTER_PRODUCTS_BY_SIZE;
   payload: {
-    size: string
-    items: ProductType[]
-  }
+    size: string;
+    items: ProductType[];
+  };
 }
 
 interface orderProductsAction {
-  type: ActionType.ORDER_PRODUCTS_BY_PRICE
+  type: ActionType.ORDER_PRODUCTS_BY_PRICE;
   payload: {
-    sort: string
-    items: ProductType[]
-  }
+    sort: string;
+    items: ProductType[];
+  };
 }
 
-export type ProductAction = fetchProductsAction | filterProductsAction | orderProductsAction
+export type ProductAction =
+  | fetchProductsAction
+  | filterProductsAction
+  | orderProductsAction;
 
 interface addToCartAction {
-  type: ActionType.ADD_TO_CART
+  type: ActionType.ADD_TO_CART;
   payload: {
-    cartItems: ProductType[]
-  }
+    cartItems: ProductType[];
+  };
 }
 
 interface removeFromCartAction {
-  type: ActionType.REMOVE_FROM_CART
+  type: ActionType.REMOVE_FROM_CART;
   payload: {
-    cartItems: ProductType[]
-  }
+    cartItems: ProductType[];
+  };
 }
 
 interface clearCartAction {
-  type: ActionType.CLEAR_CART
+  type: ActionType.CLEAR_CART;
 }
 
-export type CartAction = addToCartAction | removeFromCartAction | clearCartAction
+export type CartAction =
+  | addToCartAction
+  | removeFromCartAction
+  | clearCartAction;
 
 interface createOrderAction {
-  type: ActionType.CREATE_ORDER
+  type: ActionType.CREATE_ORDER;
   payload: {
-    order: OrderType
-  }
+    order: OrderType;
+  };
 }
 
 interface clearOrderAction {
-  type: ActionType.CLEAR_ORDER
+  type: ActionType.CLEAR_ORDER;
 }
 
 interface fetchOrdersAction {
-  type: ActionType.FETCH_ORDERS
+  type: ActionType.FETCH_ORDERS;
   payload: {
-    orders: OrderType[]
-  }
+    orders: OrderType[];
+  };
 }
 
-export type OrderAction = createOrderAction | clearOrderAction | fetchOrdersAction
+export type OrderAction =
+  | createOrderAction
+  | clearOrderAction
+  | fetchOrdersAction;

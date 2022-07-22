@@ -1,50 +1,49 @@
-import './Home.scss';
+import "./Home.scss";
 import { useState } from "react";
 import { useScroll } from "../../hooks";
 
 // components
-import Products from '../../components/Products/Products';
-import Cart from "../../components/Cart/Cart"
+import Products from "../../components/Products/Products";
+import Cart from "../../components/Cart/Cart";
 import ScrollBtn from "../../components/ScrollBtn/ScrollBtn";
-import Filter from '../../components/Filter/Filter';
-
+import Filter from "../../components/Filter/Filter";
 
 const Home = () => {
-  const [cartOpen, setCartOpen] = useState(false)
-  const [cartIcon, setCartIcon] = useState(true)
-  const { inputRef,  handleScrollTop } = useScroll(200)
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartIcon, setCartIcon] = useState(true);
+  const { inputRef, handleScrollTop } = useScroll(200);
 
   const handleClickCartIcon = () => {
-    setCartOpen(!cartOpen)
-    handleScrollTop()
-  }
+    setCartOpen(!cartOpen);
+    handleScrollTop();
+  };
 
   const handleShowCartIcon = () => {
-    setCartIcon(!cartIcon)
-  }
+    setCartIcon(!cartIcon);
+  };
 
   return (
     <div ref={inputRef} className="home">
-      <ScrollBtn handleScrollTop={handleScrollTop}/>    
+      <ScrollBtn handleScrollTop={handleScrollTop} />
       <div className="main">
         <Filter />
-        <Products/>
+        <Products />
       </div>
-      { cartIcon && <button
-        className="button cart-button"
-        onClick={handleClickCartIcon}
-      >
-        🛒
-      </button>}
-      { cartOpen &&
+      {cartIcon && (
+        <button className="button cart-button" onClick={handleClickCartIcon}>
+          🛒
+        </button>
+      )}
+      {cartOpen && (
         <div className="sidebar">
           <Cart
             handleClickCartIcon={handleClickCartIcon}
             handleShowCartIcon={handleShowCartIcon}
           />
-        </div>}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default Home;

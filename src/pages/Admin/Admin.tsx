@@ -1,9 +1,7 @@
-import './Admin.scss';
+import "./Admin.scss";
 
 const Admin = () => {
-  return (
-    <p>Admin</p>
-  )
-}
+  return <p>Admin</p>;
+};
 
-export default Admin
+export default Admin;

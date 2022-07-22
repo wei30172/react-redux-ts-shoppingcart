@@ -1,27 +1,29 @@
-import './Filter.scss'
-import { useState } from 'react';
-import { PropsFromRedux, filterConnector } from '../../state/connector/filterConnector';
+import "./Filter.scss";
+import { useState } from "react";
+import {
+  PropsFromRedux,
+  filterConnector,
+} from "../../state/connector/filterConnector";
 import { ProductType } from "../../types/ProductType.type";
 
 interface Props extends PropsFromRedux {
-  sort: string
-  size: string
-  products: ProductType[]
-  filteredProducts: ProductType[]
+  sort: string;
+  size: string;
+  products: ProductType[];
+  filteredProducts: ProductType[];
   filterProducts: (products: ProductType[], size: string) => void;
   sortProducts: (filteredProducts: ProductType[], sort: string) => void;
 }
 
-const Filter = (
-  { sort='defailt',
-    size='defailt',
-    products,
-    filteredProducts,
-    filterProducts,
-    sortProducts
-  }: Props) => {
-
-  const [order, setOrder] = useState('default')
+const Filter = ({
+  sort = "defailt",
+  size = "defailt",
+  products,
+  filteredProducts,
+  filterProducts,
+  sortProducts,
+}: Props) => {
+  const [order, setOrder] = useState("default");
 
   return !filteredProducts ? (
     <div>Loading...</div>
@@ -34,9 +36,9 @@ const Filter = (
           name="sort"
           id="sort"
           value={order}
-          onChange={(e) =>{
-            sortProducts(filteredProducts, e.target.value)
-            setOrder(e.target.value)
+          onChange={(e) => {
+            sortProducts(filteredProducts, e.target.value);
+            setOrder(e.target.value);
           }}
         >
           <option value="default">----</option>
@@ -52,8 +54,8 @@ const Filter = (
           id="size"
           value={size}
           onChange={(e) => {
-            filterProducts(products, e.target.value)
-            setOrder('defualt')
+            filterProducts(products, e.target.value);
+            setOrder("defualt");
           }}
         >
           <option value="">All</option>
@@ -65,7 +67,7 @@ const Filter = (
         </select>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default filterConnector(Filter)
+export default filterConnector(Filter);
