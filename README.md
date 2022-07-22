@@ -3,8 +3,8 @@
 Built a simple E-commerce shopping cart with React, Redux, and TypeScript. Users can add products to the shopping cart and create an order.
 
 ## Project Screenshots
-<img width="951" alt="react-e-commerce3" src="https://user-images.githubusercontent.com/60259324/180563601-5b09b329-db03-4112-a71c-e47aa37d6dd9.png">
-<img width="767" alt="react-e-commerce5" src="https://user-images.githubusercontent.com/60259324/180563628-845b5a75-14cd-49c8-b2cd-eed664cee736.png">
+<img width="960" alt="react-e-commerce3" src="https://user-images.githubusercontent.com/60259324/180563601-5b09b329-db03-4112-a71c-e47aa37d6dd9.png">
+<img width="960" alt="react-e-commerce5" src="https://user-images.githubusercontent.com/60259324/180563628-845b5a75-14cd-49c8-b2cd-eed664cee736.png">
 
 ## Getting Started with Create React App
 
